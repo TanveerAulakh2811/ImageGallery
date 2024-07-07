@@ -1,0 +1,105 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #df95d5, #f9f9f9); /* Gradient background */
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6a1b9a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for the heading */
+}
+
+#gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 30px; /* Increased border-radius */
+    overflow: hidden; /* Ensures rounded corners are fully applied */
+    border: 5px solid #6a1b9a; /* Added border to the gallery */
+}
+
+#fullpicture {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* For stacking context */
+    border: 2px solid #6a1b9a; /* Border for the full-size picture container */
+    border-radius: 30px; /* Increased border-radius */
+}
+
+#fullpicture img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px; /* Increased border-radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+#fullpicture figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    font-style: italic;
+    font-size: 14px;
+    border-bottom-left-radius: 30px; /* Increased border-radius */
+    border-bottom-right-radius: 30px; /* Increased border-radius */
+}
+
+#thumbnails {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 10px; /* Added padding around the thumbnails */
+    border: 2px solid #6a1b9a; /* Border around the thumbnails section */
+    border-radius: 30px; /* Increased border-radius */
+}
+
+#thumbnails li {
+    margin: 10px;
+}
+
+#thumbnails img {
+    cursor: pointer;
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px; /* Increased border-radius */
+    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+    border: 2px solid transparent; /* Initial border for thumbnails */
+}
+
+#thumbnails img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #6a1b9a; /* Border color on hover */
+}
+
+#thumbnails img:not(.active) {
+    filter: grayscale(100%);
+    border-color: #ccc; /* Border color for inactive thumbnails */
+}
+
+/* Add a small transition for smoother effect */
+#thumbnails img, #fullpicture img {
+    transition: transform 0.3s ease-out, filter 0.3s ease-out, border 0.3s ease-out, box-shadow 0.3s ease-out;
+}
